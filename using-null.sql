@@ -86,3 +86,15 @@ WHEN dept.id = 2 THEN 'Sci'
 WHEN dept.id = 3 THEN 'Art'
 ELSE 'None' END
 FROM teacher LEFT JOIN dept ON (dept.id=teacher.dept)
+
+
+SELECT name,
+       CASE
+           WHEN dept IN (1,
+                         2) THEN 'Sci'
+           ELSE CASE
+                    WHEN dept=3 THEN 'Art'
+                    ELSE 'None'
+                END
+       END
+FROM teacher
