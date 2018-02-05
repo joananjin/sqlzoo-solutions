@@ -168,8 +168,7 @@ FROM actor
 GROUP BY name
 
 SELECT name
-FROM movie
-JOIN casting ON movie.id=casting.movieid
+FROM casting
 JOIN actor ON casting.actorid=actor.id
 WHERE casting.ord=1
 GROUP BY name
